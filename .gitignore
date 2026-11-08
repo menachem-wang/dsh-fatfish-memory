@@ -1,0 +1,7 @@
+node_modules/
+.tmp/
+*.tgz
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.log

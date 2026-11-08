@@ -1,0 +1,67 @@
+{
+  "name": "dsh-fatfish-memory",
+  "version": "0.3.0",
+  "description": "给 DSH 会话一份带防注入守卫的长期向量记忆:本地 embedding + SQLite + RRF 混合召回 + 云端提取 + 取代链/置顶;默认 onebot 只读。基于 dsh-local-vector-memory (MIT)。",
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test tests/",
+    "check": "node --check index.mjs && node --check lib/config.mjs && node --check lib/runtime.mjs && node --check lib/tools.mjs"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dsh": {
+    "runtime": "host",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6 <0.3.0",
+    "@deepseek-ai/dsh-llm": ">=0.1.0-rc.6 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-llm": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "memory",
+    "vector",
+    "rag",
+    "embedding",
+    "sqlite",
+    "memory-poisoning",
+    "guard"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menachem-wang/dsh-fatfish-memory.git"
+  },
+  "homepage": "https://github.com/menachem-wang/dsh-fatfish-memory#readme",
+  "bugs": {
+    "url": "https://github.com/menachem-wang/dsh-fatfish-memory/issues"
+  },
+  "author": "menachem-wang",
+  "license": "MIT"
+}
