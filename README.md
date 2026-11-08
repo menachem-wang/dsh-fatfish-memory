@@ -26,18 +26,24 @@
 
 ## 安装
 
-npm 发布后：
+从 npm（推荐）：
 
 ```bash
 dsh plugin --profile web add dsh-fatfish-memory
 ```
 
-本地源码 / git 安装：
+包页：https://www.npmjs.com/package/dsh-fatfish-memory
+
+从 GitHub 安装（跟随 main 分支）：
+
+```bash
+dsh plugin --profile web add https://github.com/menachem-wang/dsh-fatfish-memory
+```
+
+本地源码：
 
 ```bash
 dsh plugin --profile web add E:\path\to\dsh-fatfish-memory
-# 或
-dsh plugin --profile web add https://github.com/menachem-wang/dsh-fatfish-memory
 ```
 
 装完**重启一次 DSH**。
